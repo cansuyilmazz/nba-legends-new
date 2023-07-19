@@ -2,14 +2,14 @@ import { useState } from "react";
 import Card from "react-bootstrap/Card";
 
 const PlayerCard = ({ name, img, statistics }) => {
-  const [showImage, setShowImage] = useState(true);
+  const [showImage, setShowImage] = useState("true");
 
   return (
     <Card
       onClick={() => {
         setShowImage(!showImage);
       }}
-      className="rounded-2 m-auto player-card "
+      className="rounded-2 m-auto player-card"
       role="button"
     >
       {showImage ? (
@@ -18,15 +18,16 @@ const PlayerCard = ({ name, img, statistics }) => {
         <ul className="m-auto">
           {statistics.map((item, i) => {
             return (
-              <li key={i} className="h5 text-start list-unstyled">
-                🏀 {item}
+              <li key={i} className="text-start h5 list-unstyled">
+                🏀{item}
               </li>
             );
           })}
         </ul>
       )}
+
       <Card.Footer>
-        <Card.Title href="#">{name}</Card.Title>
+        <Card.Title>{name}</Card.Title>
       </Card.Footer>
     </Card>
   );
